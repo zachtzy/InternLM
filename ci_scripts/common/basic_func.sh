@@ -2,6 +2,7 @@
 
 #######################################
 # Calculate the number of files in a directory.
+# You should call this function like this: num_files "${file_path}".
 # Globals:
 #   None
 # Arguments:

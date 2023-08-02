@@ -43,4 +43,5 @@ if [[ ${num} -ne ${expected_num} ]]; then
     exit_code=$(($exit_code + 1)) 
 fi
 
+# NOTICE: should not remove the cached files, because the cached files will be used in the next test case.
 exit $exit_code
