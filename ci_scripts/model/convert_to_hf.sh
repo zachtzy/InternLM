@@ -36,7 +36,7 @@ for file in ${file_list[@]}; do
     fi
 done
 
-num=$(num_files ${CKPTS_OUTPUT})
+num=$(num_files "${CKPTS_OUTPUT}")
 
 if [[ ${num} -ne ${expected_num} ]]; then
     echo "Expect: ${expected_num} files, Actual: ${num} files."

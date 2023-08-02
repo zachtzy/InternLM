@@ -14,7 +14,7 @@ source ./ci_scripts/common/basic_func.sh
 
 echo "Start to test tokenizer.py." 
 
-num=$(num_files ${RESULTS})
+num=$(num_files "${RESULTS}")
 if [[ ${num} -gt 0 ]]; then
     if ! rm -rf ${RESULTS}; then
        echo "Cleaning test data ${RESULTS} failed, exit."
