@@ -19,6 +19,7 @@ if [[ -d ${CKPTS20_PATH} ]]; then
 fi
 
 srun -p llm2 --quotatype=spot -n 8 --ntasks-per-node=8 --gpus-per-task=1 python train.py --config ./ci_scripts/train/ci_7B_sft.py
+[[ $? -ne 0 ]] && { echo "Test slurm training failed.";  exit_code=$(($exit_code + 1)); }
 
 num=$(num_files ${CKPTS20_OUTPUT})
 if [[ ${num} -ne ${expected_num} ]]; then

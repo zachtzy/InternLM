@@ -24,6 +24,7 @@ if [[ -d ${CKPTS_OUTPUT} ]]; then
 fi
 
 python ./tools/transformers/convert2hf.py --src_folder ${CKPTS_INPUT} --tgt_folder ${CKPTS_OUTPUT} --tokenizer ./tools/V7_sft.model
+[[ $? -ne 0 ]] && { echo "Test convert2hf.py failed.";  exit_code=$(($exit_code + 1)); }
 
 #assert exists model
 file_list=($TOKENIZER $CONFIG $INERNLM)

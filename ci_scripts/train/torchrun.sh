@@ -19,6 +19,7 @@ if [[ -d ${CKPTS20_PATH} ]]; then
 fi
 
 srun -p llm2 -N 1 torchrun --nnodes=1 --nproc_per_node=8 --master_port=29501 train.py --config ./ci_scripts/train/ci_7B_sft.py --launcher torch
+[[ $? -ne 0 ]] && { echo "Test torch training failed.";  exit_code=$(($exit_code + 1)); }
 
 num=$(num_files ${CKPTS_OUTPUT})
 if [[ ${num} -ne ${expected_num} ]]; then
