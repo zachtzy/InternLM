@@ -43,10 +43,4 @@ if [[ ${num} -ne ${expected_num} ]]; then
     exit_code=$(($exit_code + 1)) 
 fi
 
-# clean the test files.
-if ! rm -rf ${CKPTS_OUTPUT}/*; then
-    echo "Cleaning cached file in ${CKPTS_OUTPUT} failed."
-    exit_code=$(($exit_code + 1))
-fi
-
 exit $exit_code
