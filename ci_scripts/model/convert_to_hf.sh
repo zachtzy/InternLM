@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 source ./ci_scripts/common/variables.sh
 [[ -n ${DATA_VOLUME} ]] || { echo "Should set DATA_VOLUME first before ci, exit."; exit 1; }

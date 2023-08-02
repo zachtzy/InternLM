@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 [[ -n ${GITHUB_WORKSPACE} ]] || { echo "Should set GITHUB_WORKSPACE first before ci, exit."; exit 1; }
 readonly CKPTS_PATH="$GITHUB_WORKSPACE/llm_ckpts"
